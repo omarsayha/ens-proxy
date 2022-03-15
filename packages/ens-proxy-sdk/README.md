@@ -80,7 +80,9 @@ import {
   OWNABLE_ENS_PROXY_FACTORY_ADDRESS,
 } from "ens-proxy-sdk";
 import { ethers } from "ethers";
+
 const signer = ethers.provider.getSigner();
+
 // Create your own ownable ens proxy
 const ownableEnsProxyFactory = new Contract(
   OWNABLE_ENS_PROXY_FACTORY_ADDRESS,
