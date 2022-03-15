@@ -1,6 +1,6 @@
 {
   "name": "ens-proxy-sdk",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "license": "MIT",
   "description": "SDK for interacting with smart contracts via an ENS proxy",
   "author": "omarsayha.eth",
