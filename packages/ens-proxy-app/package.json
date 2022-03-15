@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@ensdomains/eth-ens-namehash": "^2.0.15",
-    "ens-proxy-sdk": "^0.0.9",
+    "ens-proxy-sdk": "^0.0.10",
     "ethers": "^5.1.4",
     "typescript": "^4.2.4"
   },
