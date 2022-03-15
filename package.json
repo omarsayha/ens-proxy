@@ -1,0 +1,32 @@
+{
+  "name": "ens-proxy",
+  "version": "0.0.0",
+  "description": "Ens resolution on-chain!",
+  "repository": "https://github.com/dphilipson",
+  "author": "David Philipson",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "yarn workspace ens-proxy-sc prepare && yarn workspace ens-proxy-app build",
+    "deploy": "source .env && yarn build && netlify deploy --dir packages/ens-proxy-app/public",
+    "develop": "lerna run develop --stream",
+    "format": "lerna run format --stream",
+    "pre-commit": "lerna run --concurrency 1 --stream --since HEAD --exclude-dependents pre-commit && lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*.{js,json,scss,md,ts,tsx}": [
+      "yarn prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^7.0.4",
+    "lerna": "^4.0.0",
+    "lint-staged": "^12.3.2",
+    "netlify-cli": "^8.15.0",
+    "prettier": "^2.2.1"
+  }
+}

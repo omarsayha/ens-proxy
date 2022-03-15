@@ -1,0 +1,53 @@
+{
+  "name": "ens-proxy-sdk",
+  "version": "0.0.9",
+  "license": "MIT",
+  "description": "SDK for interacting with smart contracts via an ENS proxy",
+  "author": "omarsayha.eth",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oceja/ens-proxy.git"
+  },
+  "keywords": [
+    "ENS",
+    "ethereum",
+    "solidity"
+  ],
+  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist/"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "yarn run clean && tsc -p tsconfig.build-esm.json && tsc -p tsconfig.build-cjs.json",
+    "clean": "rm -rf dist/*",
+    "lint": "eslint",
+    "pre-commit": "lint-staged",
+    "prepublishOnly": "yarn build",
+    "typecheck": "tsc --noEmit",
+    "typecheck-watch": "tsc --noEmit --watch"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "yarn eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@ensdomains/eth-ens-namehash": "^2.0.15",
+    "ethers": "^5.5.4",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "lint-staged": "^12.3.5",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.2"
+  }
+}
